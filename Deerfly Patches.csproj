@@ -153,6 +153,7 @@
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PromoCodesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -164,6 +165,10 @@
     <Compile Include="Migrations\201708010159254_product.Designer.cs">
       <DependentUpon>201708010159254_product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708010305416_promoCode.cs" />
+    <Compile Include="Migrations\201708010305416_promoCode.Designer.cs">
+      <DependentUpon>201708010305416_promoCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -171,6 +176,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +241,11 @@
     <Content Include="Views\Orders\Details.cshtml" />
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\PromoCodes\Create.cshtml" />
+    <Content Include="Views\PromoCodes\Delete.cshtml" />
+    <Content Include="Views\PromoCodes\Details.cshtml" />
+    <Content Include="Views\PromoCodes\Edit.cshtml" />
+    <Content Include="Views\PromoCodes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708010159254_product.resx">
       <DependentUpon>201708010159254_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708010305416_promoCode.resx">
+      <DependentUpon>201708010305416_promoCode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
