@@ -3,22 +3,72 @@
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    height: auto;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.row {
+    height: auto;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.centered {
+    margin: auto;
+}
+
+.container {
+    height: auto;
+}
+
+.image-square-rounded {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: inline-block;
+    border-radius: 14px;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    max-height: 290px;
+}
+
+.foreground-text {
+    position: inherit;
+    font-size: small;
+    padding: 45px 10px 20px 100px;
+}
+
+.button-container {
+    margin: auto;
+} 
+
+
+
+/* Order Page */
+.product-item {
+    height: auto;
+    margin-top: 12px;
+    margin-bottom: 30px;
+}
+
+.product-item * {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.product-image {
+    width: 200px;
+    height: 220px;
+    margin: auto;
+}
+
+.image-wrapper {
+    width: 100%;
 }

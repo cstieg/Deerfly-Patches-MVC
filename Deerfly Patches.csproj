@@ -182,6 +182,18 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\18527154_1839628889693425_4805439280968325837_o.jpg" />
+    <Content Include="Content\Images\banner1.svg" />
+    <Content Include="Content\Images\banner2.svg" />
+    <Content Include="Content\Images\banner3.svg" />
+    <Content Include="Content\Images\banner4.svg" />
+    <Content Include="Content\Images\Chris 20141116 3.5 x 5.JPG" />
+    <Content Include="Content\Images\deerfly1-small.jpg" />
+    <Content Include="Content\Images\deerfly1.jpg" />
+    <Content Include="Content\Images\deerflypatchheader-small.jpg" />
+    <Content Include="Content\Images\deerflypatchheader.jpg" />
+    <Content Include="Content\Images\slantbox-info.png" />
+    <Content Include="Content\site.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
