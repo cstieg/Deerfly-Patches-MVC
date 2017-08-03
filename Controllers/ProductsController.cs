@@ -50,7 +50,7 @@ namespace Deerfly_Patches.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,Description,Price,Shipping,ImageURL,Category")] Product product)
+        public ActionResult Create(Product product)
         {
             // Check file is exists and is valid image
             HttpPostedFileBase imageFile = null;
@@ -108,8 +108,27 @@ namespace Deerfly_Patches.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Name,Description,Price,Shipping,ImageURL,Category")] Product product)
+        public ActionResult Edit(Product product)
         {
+            // Todo: Delete old file
+
+
+            // Check file is exists and is valid image
+            HttpPostedFileBase imageFile = null;
+            if (Request.Files.Count == 0)
+            {
+                ModelState.AddModelError("ImageURL", "This field is required");
+            }
+            else
+            {
+                imageFile = Request.Files[0];
+            }
+
+            if (imageFile != null && (imageFile.ContentLength == 0 || !validImageTypes.Contains(imageFile.ContentType)))
+            {
+                ModelState.AddModelError("ImageURL", "Please choose either a valid GIF, JPG or PNG image.");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;

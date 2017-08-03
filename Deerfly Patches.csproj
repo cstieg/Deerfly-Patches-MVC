@@ -263,6 +263,7 @@
     <Content Include="Views\PromoCodes\Details.cshtml" />
     <Content Include="Views\PromoCodes\Edit.cshtml" />
     <Content Include="Views\PromoCodes\Index.cshtml" />
+    <Content Include="Views\Products\ModifyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
