@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201708010305416_promoCode.Designer.cs">
       <DependentUpon>201708010305416_promoCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708031734213_productsviewmodel.cs" />
+    <Compile Include="Migrations\201708031734213_productsviewmodel.Designer.cs">
+      <DependentUpon>201708031734213_productsviewmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -178,6 +182,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\PromoCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -286,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708010305416_promoCode.resx">
       <DependentUpon>201708010305416_promoCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708031734213_productsviewmodel.resx">
+      <DependentUpon>201708031734213_productsviewmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

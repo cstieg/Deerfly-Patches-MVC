@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Deerfly_Patches.Models;
+using System.IO;
 
 namespace Deerfly_Patches.Controllers
 {
     public class ProductsController : Controller
     {
         private Deerfly_PatchesContext db = new Deerfly_PatchesContext();
+        private string[] validImageTypes = new string[]
+        {
+            "image/gif",
+            "image/jpeg",
+            "image/png"
+        };
 
         // GET: Products
         public ActionResult Index()
@@ -48,14 +52,40 @@ namespace Deerfly_Patches.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Name,Description,Price,Shipping,ImageURL,Category")] Product product)
         {
+            // Check file is exists and is valid image
+            HttpPostedFileBase imageFile = null;
+            if (Request.Files.Count == 0)
+            {
+                ModelState.AddModelError("ImageURL", "This field is required");
+            }
+            else
+            {
+                imageFile = Request.Files[0];
+            }
+            
+            if (imageFile != null && (imageFile.ContentLength == 0 || !validImageTypes.Contains(imageFile.ContentType)))
+            {
+                ModelState.AddModelError("ImageURL", "Please choose either a valid GIF, JPG or PNG image.");
+            }
+
             if (ModelState.IsValid)
             {
+                // Save image to disk and store filepath in model
+                if (imageFile != null && imageFile.ContentLength != 0)
+                {
+                    var imagePath = Path.Combine(RouteConfig.productImagesPath, imageFile.FileName);
+                    var imageUrl = RouteConfig.productImagesFolder + "/" + imageFile.FileName;
+                    imageFile.SaveAs(imagePath);
+                    product.ImageURL = imageUrl;
+                }
+
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(product);
+
         }
 
         // GET: Products/Edit/5
